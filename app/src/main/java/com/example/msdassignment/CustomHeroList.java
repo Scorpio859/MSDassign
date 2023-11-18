@@ -7,13 +7,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class customHeroList extends ArrayAdapter {
+public class CustomHeroList extends ArrayAdapter {
     private String[] heroNames;
     private Integer[] imageid;
     private Activity context;
 
-    public customHeroList(Activity context, Integer[] imageid, String[] heroNames){
+    public CustomHeroList(Activity context, Integer[] imageid, String[] heroNames){
         super(context, R.layout.row_item, heroNames);
         this.context = context;
         this.heroNames = heroNames;
@@ -31,6 +32,15 @@ public class customHeroList extends ArrayAdapter {
 
         TextView heroName = (TextView)row.findViewById(R.id.heroName);
         ImageView heroImage = (ImageView)row.findViewById(R.id.heroImage);
+
+        heroName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CharSequence text = "You clicked hero: " + heroNames[position];
+                int duration = Toast.LENGTH_LONG;
+                Toast.makeText(CustomHeroList.this.getContext(), text, duration).show();
+            }
+        });
 
         heroName.setText(heroNames[position]);
         heroImage.setImageResource(imageid[position]);
