@@ -25,7 +25,15 @@ public class HerosActivity extends AppCompatActivity {
             "Valkyrie",
             "Highlander",
             "Shaman",
-            "Jormungandr"
+            "Jormungandr",
+            "Kensei", //Samurai
+            "Shugoki",
+            "Orochi",
+            "Nobushi",
+            "Shinobi",
+            "Aramusha",
+            "Hitokiri",
+            "Kyoshin"
     };
     private Integer imageid[] = {
             //images from drawable folder
@@ -44,7 +52,15 @@ public class HerosActivity extends AppCompatActivity {
             R.drawable.valkhead,
             R.drawable.hlhead,
             R.drawable.shamanhead,
-            R.drawable.jormhead
+            R.drawable.jormhead,
+            R.drawable.kenseihead, //Samurai
+            R.drawable.gokihead,
+            R.drawable.orochihead,
+            R.drawable.nobushihead,
+            R.drawable.shinobihead,
+            R.drawable.aramushahead,
+            R.drawable.hitohead,
+            R.drawable.kyohead
     };
 
     @Override
