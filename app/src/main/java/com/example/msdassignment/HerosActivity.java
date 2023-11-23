@@ -33,7 +33,13 @@ public class HerosActivity extends AppCompatActivity {
             "Shinobi",
             "Aramusha",
             "Hitokiri",
-            "Kyoshin"
+            "Kyoshin",
+            "Tiandi", //Wu lin
+            "Jiang Jun",
+            "Nuxia",
+            "Shaolin",
+            "Zhanhu",
+            "Pirate" //outlanders
     };
     private Integer imageid[] = {
             //images from drawable folder
@@ -60,7 +66,13 @@ public class HerosActivity extends AppCompatActivity {
             R.drawable.shinobihead,
             R.drawable.aramushahead,
             R.drawable.hitohead,
-            R.drawable.kyohead
+            R.drawable.kyohead,
+            R.drawable.tiandihead, //Wu lin
+            R.drawable.jjhead,
+            R.drawable.nuxiahead,
+            R.drawable.shaolinhead,
+            R.drawable.zhanhuhead,
+            R.drawable.piratehead //outlanders
     };
 
     @Override
