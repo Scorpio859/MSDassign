@@ -33,7 +33,18 @@ public class CustomHeroList extends ArrayAdapter {
         TextView heroName = (TextView)row.findViewById(R.id.heroName);
         ImageView heroImage = (ImageView)row.findViewById(R.id.heroImage);
 
+        //on click listener for the textView
         heroName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CharSequence text = "You clicked hero: " + heroNames[position];
+                int duration = Toast.LENGTH_LONG;
+                Toast.makeText(CustomHeroList.this.getContext(), text, duration).show();
+            }
+        });
+
+        //on click listener for the imageview
+        heroImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CharSequence text = "You clicked hero: " + heroNames[position];
