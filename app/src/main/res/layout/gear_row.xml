@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--TextView of hero name-->
+    <TextView
+        android:id="@+id/gearHero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:text="hero"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--TextView title "body"-->
+    <TextView
+        android:id="@+id/bodyText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Body"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/armsCheck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gearHero" />
+
+    <!--Check box for head-->
+    <CheckBox
+        android:id="@+id/headCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_below="@+id/gearHero"
+        android:text="Head"
+        app:layout_constraintEnd_toStartOf="@+id/bodyCheck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bodyText" />
+
+    <!--Check box body-->
+    <CheckBox
+        android:id="@+id/bodyCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Body"
+        app:layout_constraintStart_toEndOf="@+id/headCheck"
+        app:layout_constraintTop_toBottomOf="@+id/bodyText" />
+
+    <!--Checkbox arms-->
+    <CheckBox
+        android:id="@+id/armsCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="arms"
+        app:layout_constraintStart_toEndOf="@+id/bodyCheck"
+        app:layout_constraintTop_toBottomOf="@+id/bodyText" />
+
+    <!--Text view for "weapon"-->
+    <TextView
+        android:id="@+id/wepText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Weapon"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/wepCcheck"
+        app:layout_constraintStart_toEndOf="@+id/bodyText"
+        app:layout_constraintTop_toBottomOf="@+id/gearHero" />
+
+    <!--checkbox part A-->
+    <CheckBox
+        android:id="@+id/wepAcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Part A"
+        app:layout_constraintStart_toEndOf="@+id/armsCheck"
+        app:layout_constraintTop_toBottomOf="@+id/wepText" />
+
+    <!--checkbox part B-->
+    <CheckBox
+        android:id="@+id/wepBcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Part B"
+        app:layout_constraintStart_toEndOf="@+id/wepAcheck"
+        app:layout_constraintTop_toTopOf="@+id/wepAcheck" />
+
+    <!--checkbox part C-->
+    <CheckBox
+        android:id="@+id/wepCcheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Part C"
+        app:layout_constraintStart_toEndOf="@+id/wepBcheck"
+        app:layout_constraintTop_toBottomOf="@+id/wepText" />
+
+    <!--TextView for "effects"-->
+    <TextView
+        android:id="@+id/effectText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Effects"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/wepText"
+        app:layout_constraintTop_toBottomOf="@+id/gearHero"
+        app:layout_constraintEnd_toEndOf="@+id/exeCheck"/>
+
+    <!--checkbox idle effect-->
+    <CheckBox
+        android:id="@+id/idleCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Idle"
+        app:layout_constraintStart_toEndOf="@+id/wepCcheck"
+        app:layout_constraintTop_toBottomOf="@+id/effectText" />
+
+    <!--checkbox locked on effect-->
+    <CheckBox
+        android:id="@+id/lockedCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Locked on"
+        app:layout_constraintStart_toEndOf="@+id/idleCheck"
+        app:layout_constraintTop_toBottomOf="@+id/effectText" />
+
+    <!--checkbox unlocked effect-->
+    <CheckBox
+        android:id="@+id/unlockedCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unlocked"
+        app:layout_constraintStart_toEndOf="@+id/lockedCheck"
+        app:layout_constraintTop_toBottomOf="@+id/effectText" />
+
+    <!--checkbox execution effect-->
+    <CheckBox
+        android:id="@+id/exeCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Execution"
+        app:layout_constraintStart_toEndOf="@+id/unlockedCheck"
+        app:layout_constraintTop_toBottomOf="@+id/effectText" />
+
+    <!--TextView for "fashion"-->
+    <TextView
+        android:id="@+id/fashionText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fashion"
+        android:textAlignment="center"
+        app:layout_constraintStart_toEndOf="@+id/effectText"
+        app:layout_constraintTop_toBottomOf="@+id/gearHero"
+        app:layout_constraintEnd_toEndOf="@+id/fitCheck"/>
+
+    <!--checkbox for ornament-->
+    <CheckBox
+        android:id="@+id/ornCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Idle"
+        app:layout_constraintStart_toEndOf="@+id/exeCheck"
+        app:layout_constraintTop_toBottomOf="@+id/fashionText" />
+
+    <!--checkbox for outfit-->
+    <CheckBox
+        android:id="@+id/fitCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Outfit"
+        app:layout_constraintStart_toEndOf="@+id/ornCheck"
+        app:layout_constraintTop_toBottomOf="@+id/fashionText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
