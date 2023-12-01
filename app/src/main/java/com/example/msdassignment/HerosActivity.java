@@ -39,7 +39,10 @@ public class HerosActivity extends AppCompatActivity {
             "Nuxia",
             "Shaolin",
             "Zhanhu",
-            "Pirate" //outlanders
+            "Pirate", //outlanders
+            "Medjay",
+            "Afeera",
+            "Ocelotl"
     };
     private Integer imageid[] = {
             //images from drawable folder
@@ -72,7 +75,10 @@ public class HerosActivity extends AppCompatActivity {
             R.drawable.nuxiahead,
             R.drawable.shaolinhead,
             R.drawable.zhanhuhead,
-            R.drawable.piratehead //outlanders
+            R.drawable.piratehead, //outlanders
+            R.drawable.medjayhead,
+            R.drawable.afeerahead,
+            R.drawable.ocelhead
     };
 
     @Override

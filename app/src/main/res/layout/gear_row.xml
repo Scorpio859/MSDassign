@@ -13,6 +13,7 @@
         android:layout_row="0"
         android:layout_column="0"
         android:text="hero"
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -23,7 +24,7 @@
     <!--TextView title "body"-->
     <TextView
         android:id="@+id/bodyText"
-        android:layout_width="0dp"
+        android:layout_width="0dp" 
         android:layout_height="wrap_content"
         android:text="Body"
         android:textAlignment="center"

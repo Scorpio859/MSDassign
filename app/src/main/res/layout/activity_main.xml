@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background2">
+    android:background="@drawable/background1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,24 +13,20 @@
 
         <ImageView
             android:id="@+id/homeImage"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="64dp"
             android:contentDescription="For honor picture"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.40"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/homepic" />
 
         <Button
             android:id="@+id/herosButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
             android:text="Heros"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,8 +39,6 @@
             android:id="@+id/perksButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
             android:text="Perks"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -57,8 +51,6 @@
             android:id="@+id/modesButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
             android:text="Game Modes"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -72,8 +64,6 @@
             android:id="@+id/trackerButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
             android:text="Event Gear Tracker"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -87,8 +77,6 @@
             android:id="@+id/gameButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="32dp"
             android:text="Parry-Simulator"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"

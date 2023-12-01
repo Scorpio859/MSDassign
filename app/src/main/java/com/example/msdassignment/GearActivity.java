@@ -40,7 +40,10 @@ public class GearActivity extends AppCompatActivity {
             "Nuxia",
             "Shaolin",
             "Zhanhu",
-            "Pirate" //outlanders
+            "Pirate", //outlanders
+            "Medjay",
+            "Afeera",
+            "Ocelotl"
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
