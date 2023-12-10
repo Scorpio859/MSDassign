@@ -1,6 +1,8 @@
 package com.example.msdassignment;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,10 +24,8 @@ public class CustomGearList extends ArrayAdapter<String> {
         this.heroNames = heroNames;
         this.checkState = new boolean[heroNames.length][13];
 
-        //set checked state as unchecked(false) as default
-        for (boolean[] row : checkState) {
-            Arrays.fill(row, false);
-        }
+        //load the states of each of the boxes
+        loadStates();
     }
     
     @Override
@@ -84,6 +84,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][0] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -91,6 +92,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][1] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -98,6 +100,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][2] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -105,6 +108,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][3] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -112,6 +116,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][4] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -119,6 +124,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][5] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -126,6 +132,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][6] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -133,6 +140,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][7] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -140,6 +148,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][8] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -147,6 +156,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][9] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -154,6 +164,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][10] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -161,6 +172,7 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][11] = isChecked;
+                saveCheckedState();
             }
         });
 
@@ -168,11 +180,46 @@ public class CustomGearList extends ArrayAdapter<String> {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkState[position][12] = isChecked;
+                saveCheckedState();
             }
         });
 
 
         return row;
+    }
+
+    //function to save the checked states of each of the boxes
+    private void saveCheckedState() {
+        SharedPreferences preferences = context.getSharedPreferences("CB_states", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        //looping through the 2D array to save the states for each box in each row
+        for (int i = 0; i < heroNames.length; i++) {
+            for (int j = 0; j < 13; j++) {
+                //create key for current row + column
+                String key = "row_" + i + "_checkbox_" + j;
+                //enter the key and state(checked = True/ unchecked = False) of current box into editor
+                editor.putBoolean(key, checkState[i][j]);
+            }
+        }
+
+        //apply changes
+        editor.apply();
+    }
+
+    //function to load the previously saved states of the checkboxes
+    private void loadStates() {
+        SharedPreferences preferences = context.getSharedPreferences("CB_states", Context.MODE_PRIVATE);
+
+        // loop through the 2D array to load the states of each checkbox
+        for (int i = 0; i < heroNames.length; i++) {
+            for (int j = 0; j < 13; j++) {
+                //create key for current row + column
+                String key = "row_" + i + "_checkbox_" + j;
+                //get state and place it into checkstate variable, if value doesnt exist set value to false by default
+                checkState[i][j] = preferences.getBoolean(key, false);
+            }
+        }
     }
 
     @Override
