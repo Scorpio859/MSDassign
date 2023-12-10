@@ -14,6 +14,7 @@
         android:layout_column="0"
         android:text="hero"
         android:textSize="20dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -28,6 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Body"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/armsCheck"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gearHero" />
@@ -41,6 +43,7 @@
         android:layout_column="0"
         android:layout_below="@+id/gearHero"
         android:text="Head"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/bodyCheck"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodyText" />
@@ -51,6 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Body"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/headCheck"
         app:layout_constraintTop_toBottomOf="@+id/bodyText" />
 
@@ -60,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="arms"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/bodyCheck"
         app:layout_constraintTop_toBottomOf="@+id/bodyText" />
 
@@ -70,6 +75,7 @@
         android:layout_height="wrap_content"
         android:text="Weapon"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/wepCcheck"
         app:layout_constraintStart_toEndOf="@+id/bodyText"
         app:layout_constraintTop_toBottomOf="@+id/gearHero" />
@@ -80,6 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Part A"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/armsCheck"
         app:layout_constraintTop_toBottomOf="@+id/wepText" />
 
@@ -89,6 +96,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Part B"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/wepAcheck"
         app:layout_constraintTop_toTopOf="@+id/wepAcheck" />
 
@@ -98,6 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Part C"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/wepBcheck"
         app:layout_constraintTop_toBottomOf="@+id/wepText" />
 
@@ -108,6 +117,7 @@
         android:layout_height="wrap_content"
         android:text="Effects"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/wepText"
         app:layout_constraintTop_toBottomOf="@+id/gearHero"
         app:layout_constraintEnd_toEndOf="@+id/exeCheck"/>
@@ -118,6 +128,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Idle"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/wepCcheck"
         app:layout_constraintTop_toBottomOf="@+id/effectText" />
 
@@ -127,6 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Locked on"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/idleCheck"
         app:layout_constraintTop_toBottomOf="@+id/effectText" />
 
@@ -136,6 +148,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Unlocked"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/lockedCheck"
         app:layout_constraintTop_toBottomOf="@+id/effectText" />
 
@@ -145,6 +158,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Execution"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/unlockedCheck"
         app:layout_constraintTop_toBottomOf="@+id/effectText" />
 
@@ -155,16 +169,18 @@
         android:layout_height="wrap_content"
         android:text="Fashion"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/effectText"
         app:layout_constraintTop_toBottomOf="@+id/gearHero"
-        app:layout_constraintEnd_toEndOf="@+id/fitCheck"/>
+        app:layout_constraintEnd_toEndOf="@+id/colourCheck"/>
 
     <!--checkbox for ornament-->
     <CheckBox
         android:id="@+id/ornCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Idle"
+        android:text="Ornament"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/exeCheck"
         app:layout_constraintTop_toBottomOf="@+id/fashionText" />
 
@@ -174,7 +190,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Outfit"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/ornCheck"
+        app:layout_constraintTop_toBottomOf="@+id/fashionText" />
+
+    <!--checkbox for colour palette-->
+    <CheckBox
+        android:id="@+id/colourCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Colour Palette"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/fitCheck"
         app:layout_constraintTop_toBottomOf="@+id/fashionText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

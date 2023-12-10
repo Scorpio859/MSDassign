@@ -18,16 +18,16 @@ public class PerksActivity extends AppCompatActivity {
         tabHost.setup();
 
         //setting up spec for offencive perks tab
-        TabHost.TabSpec spec = tabHost.newTabSpec("Offencive");
+        TabHost.TabSpec spec = tabHost.newTabSpec("Offensive");
         spec.setContent(R.id.Offensive);
-        spec.setIndicator("Offencive");
+        spec.setIndicator("Offensive");
         //adding tab to tabhost instance
         tabHost.addTab(spec);
 
         //setting up spec for defencive perks tab
-        spec = tabHost.newTabSpec("Defencive");
+        spec = tabHost.newTabSpec("Defensive");
         spec.setContent(R.id.Defencive);
-        spec.setIndicator("Defencive");
+        spec.setIndicator("Defensive");
         //adding defencive tab
         tabHost.addTab(spec);
 
