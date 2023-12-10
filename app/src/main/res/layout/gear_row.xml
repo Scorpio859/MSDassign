@@ -63,7 +63,7 @@
         android:id="@+id/armsCheck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="arms"
+        android:text="Arms"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/bodyCheck"
         app:layout_constraintTop_toBottomOf="@+id/bodyText" />
