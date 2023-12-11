@@ -41,14 +41,17 @@ public class CustomHeroList extends ArrayAdapter {
             public void onClick(View v) {
                 CharSequence text = "You clicked hero: " + heroNames[position];
                 int duration = Toast.LENGTH_LONG;
-                Toast.makeText(CustomHeroList.this.getContext(), text, duration).show();
+                //Toast.makeText(CustomHeroList.this.getContext(), text, duration).show();
 
                 // on click open a new view with info on the selected hero
                 Intent intent = new Intent(context, ActivityHeroInfo.class);
 
+                //get relevant information for the hero clicked
+                String name = heroNames[position];
+
                 //bundle the parameters that we want to pass
                 Bundle b = new Bundle();
-                b.putString("Name", "Warden");
+                b.putString("Name", name);
                 b.putString("Faction", "Knights");
                 b.putString("Class", "Vanguard");
 
@@ -66,14 +69,17 @@ public class CustomHeroList extends ArrayAdapter {
             public void onClick(View v) {
                 CharSequence text = "You clicked hero: " + heroNames[position];
                 int duration = Toast.LENGTH_LONG;
-                Toast.makeText(CustomHeroList.this.getContext(), text, duration).show();
+                //Toast.makeText(CustomHeroList.this.getContext(), text, duration).show();
 
                 // on click open a new view with info on the selected hero
                 Intent intent = new Intent(context, ActivityHeroInfo.class);
 
+                //get relevant information for the hero clicked
+                String name = heroNames[position];
+
                 //bundle the parameters that we want to pass
                 Bundle b = new Bundle();
-                b.putString("Name", "Warden");
+                b.putString("Name", name);
                 b.putString("Faction", "Knights");
                 b.putString("Class", "Vanguard");
 
