@@ -4,8 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityHeroInfo">
+    tools:context=".ActivityHeroInfo"
+    android:background="@drawable/background1">
 
+    <!--guidelines to make spacing consistent at 15%/40%/65% from top-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"
+        />
+
+    <!--hero pair-->
     <TextView
         android:id="@+id/heroText"
         android:layout_width="wrap_content"
@@ -14,9 +41,10 @@
         android:text="Hero"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/guide1" />
 
     <TextView
         android:id="@+id/heroNameDisplay"
@@ -25,10 +53,13 @@
         android:layout_marginTop="10dp"
         android:text="SampleName"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heroText" />
 
+
+    <!--faction pair-->
     <TextView
         android:id="@+id/factionText"
         android:layout_width="wrap_content"
@@ -37,9 +68,10 @@
         android:text="Faction"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heroNameDisplay" />
+        app:layout_constraintTop_toBottomOf="@id/guide2" />
 
     <TextView
         android:id="@+id/heroFactionDisplay"
@@ -47,10 +79,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="SampleFaction"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/factionText" />
 
+
+    <!--class pair-->
     <TextView
         android:id="@+id/classText"
         android:layout_width="wrap_content"
@@ -59,9 +94,10 @@
         android:text="Class"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/heroFactionDisplay" />
+        app:layout_constraintTop_toBottomOf="@id/guide3" />
 
     <TextView
         android:id="@+id/heroClassDisplay"
@@ -69,7 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="SampleClass"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/classText" />
+        app:layout_constraintTop_toBottomOf="@id/classText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
