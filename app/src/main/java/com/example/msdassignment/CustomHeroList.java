@@ -49,12 +49,13 @@ public class CustomHeroList extends ArrayAdapter {
                 //get relevant information for the hero clicked
                 String name = heroNames[position];
                 String faction = getFaction(position);
+                String hClass = getHClass(position);
 
                 //bundle the parameters that we want to pass
                 Bundle b = new Bundle();
                 b.putString("Name", name);
                 b.putString("Faction", faction);
-                b.putString("Class", "Vanguard");
+                b.putString("Class", hClass);
 
                 //put info into the intent
                 intent.putExtras(b);
@@ -78,12 +79,14 @@ public class CustomHeroList extends ArrayAdapter {
                 //get relevant information for the hero clicked
                 String name = heroNames[position];
                 String faction = getFaction(position);
+                String hClass = getHClass(position);
 
                 //bundle the parameters that we want to pass
                 Bundle b = new Bundle();
                 b.putString("Name", name);
                 b.putString("Faction", faction);
-                b.putString("Class", "Vanguard");
+                b.putString("Class", hClass);
+
 
                 //put info into the intent
                 intent.putExtras(b);
@@ -110,6 +113,20 @@ public class CustomHeroList extends ArrayAdapter {
             return "Wu Lin";
         } else if (pos >=29 && pos <=32) {
             return "Outlanders";
+        } else {
+            return "Unknown";
+        }
+    }
+
+    private String getHClass(int pos) {
+        if (pos == 0 || pos == 7 || pos == 9 || pos == 16 || pos == 24) {
+            return "Vanguard";
+        } else if (pos == 1 || pos == 5 || pos == 11 || pos == 14 || pos == 18 || pos == 20 || pos == 26) {
+            return "Assassin";
+        } else if (pos == 2 || pos == 6 || pos == 10 || pos == 15 || pos == 17 || pos == 22 || pos == 25) {
+            return "Heavy";
+        } else if (pos == 3 || pos == 4 || pos == 8 || pos == 12 || pos == 13 || pos == 19 || pos == 21 || pos == 23 || pos == 27 || pos == 28 || pos == 29 || pos == 30 || pos == 31 || pos == 32) {
+            return "Hybrid";
         } else {
             return "Unknown";
         }
