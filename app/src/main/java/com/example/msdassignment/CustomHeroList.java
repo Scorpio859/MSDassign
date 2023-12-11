@@ -1,6 +1,8 @@
 package com.example.msdassignment;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +42,21 @@ public class CustomHeroList extends ArrayAdapter {
                 CharSequence text = "You clicked hero: " + heroNames[position];
                 int duration = Toast.LENGTH_LONG;
                 Toast.makeText(CustomHeroList.this.getContext(), text, duration).show();
+
+                // on click open a new view with info on the selected hero
+                Intent intent = new Intent(context, ActivityHeroInfo.class);
+
+                //bundle the parameters that we want to pass
+                Bundle b = new Bundle();
+                b.putString("Name", "Warden");
+                b.putString("Faction", "Knights");
+                b.putString("Class", "Vanguard");
+
+                //put info into the intent
+                intent.putExtras(b);
+
+                //start new activity
+                context.startActivity(intent);
             }
         });
 
@@ -50,6 +67,21 @@ public class CustomHeroList extends ArrayAdapter {
                 CharSequence text = "You clicked hero: " + heroNames[position];
                 int duration = Toast.LENGTH_LONG;
                 Toast.makeText(CustomHeroList.this.getContext(), text, duration).show();
+
+                // on click open a new view with info on the selected hero
+                Intent intent = new Intent(context, ActivityHeroInfo.class);
+
+                //bundle the parameters that we want to pass
+                Bundle b = new Bundle();
+                b.putString("Name", "Warden");
+                b.putString("Faction", "Knights");
+                b.putString("Class", "Vanguard");
+
+                //put info into the intent
+                intent.putExtras(b);
+
+                //start new activity
+                context.startActivity(intent);
             }
         });
 
