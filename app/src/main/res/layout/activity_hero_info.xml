@@ -37,11 +37,10 @@
         android:id="@+id/heroText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Hero"
         android:textAlignment="center"
-        android:textSize="24sp"
         android:textColor="@color/white"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guide1" />
@@ -54,6 +53,7 @@
         android:text="SampleName"
         android:textAlignment="center"
         android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/heroText" />
@@ -64,11 +64,10 @@
         android:id="@+id/factionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Faction"
         android:textAlignment="center"
-        android:textSize="24sp"
         android:textColor="@color/white"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guide2" />
@@ -80,6 +79,7 @@
         android:layout_marginTop="10dp"
         android:text="SampleFaction"
         android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/factionText" />
@@ -90,11 +90,10 @@
         android:id="@+id/classText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:text="Class"
         android:textAlignment="center"
-        android:textSize="24sp"
         android:textColor="@color/white"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guide3" />
@@ -106,6 +105,7 @@
         android:layout_marginTop="10dp"
         android:text="SampleClass"
         android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/classText" />
