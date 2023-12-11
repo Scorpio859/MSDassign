@@ -48,11 +48,12 @@ public class CustomHeroList extends ArrayAdapter {
 
                 //get relevant information for the hero clicked
                 String name = heroNames[position];
+                String faction = getFaction(position);
 
                 //bundle the parameters that we want to pass
                 Bundle b = new Bundle();
                 b.putString("Name", name);
-                b.putString("Faction", "Knights");
+                b.putString("Faction", faction);
                 b.putString("Class", "Vanguard");
 
                 //put info into the intent
@@ -76,11 +77,12 @@ public class CustomHeroList extends ArrayAdapter {
 
                 //get relevant information for the hero clicked
                 String name = heroNames[position];
+                String faction = getFaction(position);
 
                 //bundle the parameters that we want to pass
                 Bundle b = new Bundle();
                 b.putString("Name", name);
-                b.putString("Faction", "Knights");
+                b.putString("Faction", faction);
                 b.putString("Class", "Vanguard");
 
                 //put info into the intent
@@ -95,6 +97,22 @@ public class CustomHeroList extends ArrayAdapter {
         heroImage.setImageResource(imageid[position]);
 
         return row;
+    }
+
+    private String getFaction(int pos) {
+        if (pos >=0 && pos <=8) {
+            return "Knights";
+        } else if (pos >=9 && pos <=15) {
+            return "Vikings";
+        } else if (pos >=16 && pos <=23) {
+            return "Samurai";
+        } else if (pos >=24 && pos <=28) {
+            return "Wu Lin";
+        } else if (pos >=29 && pos <=32) {
+            return "Outlanders";
+        } else {
+            return "Unknown";
+        }
     }
 
 }
