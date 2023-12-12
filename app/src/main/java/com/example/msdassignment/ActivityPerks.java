@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 public class ActivityPerks extends AppCompatActivity {
 
-    private ListView listView;
+    private ListView perkListView;
     private String perkNames[] = {
             "Galestorm",
             "Devourer",
@@ -84,9 +84,9 @@ public class ActivityPerks extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perks);
 
-        ListView listView = (ListView) findViewById(R.id.perkList);
+        ListView perkListView = (ListView) findViewById(R.id.perkList);
 
         CustomPerkList customPerkList = new CustomPerkList(this, perkNames, perkDescs, perkImgId);
-        listView.setAdapter(customPerkList);
+        perkListView.setAdapter(customPerkList);
     }
 }
