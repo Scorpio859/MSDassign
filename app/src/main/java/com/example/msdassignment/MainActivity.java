@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Button perkButton = (Button) findViewById(R.id.perksButton);
         Button modesButton = (Button) findViewById(R.id.modesButton);
         Button trackerButton = (Button) findViewById(R.id.trackerButton);
-        Button gameButton = (Button) findViewById(R.id.gameButton);
+        Button locButton = (Button) findViewById(R.id.locatButton);
 
         // onClickListener for the Heros button
         heroButton.setOnClickListener(new View.OnClickListener() {
@@ -65,12 +65,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // onClickListener for the Heros in history button button
-        gameButton.setOnClickListener(new View.OnClickListener() {
+        // onClickListener for the Location button button
+        locButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //intent for storing the info of the new activity
-                Intent intent = new Intent(MainActivity.this, gameActivity.class);
+                Intent intent = new Intent(MainActivity.this, ActivityYourLocal.class);
                 //starting the activity in intent
                 startActivity(intent);
             }

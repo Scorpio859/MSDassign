@@ -75,10 +75,10 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
-            android:id="@+id/gameButton"
+            android:id="@+id/locatButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Parry-Simulator"
+            android:text="GPS implementation"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
