@@ -21,37 +21,40 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class ActivityYourLocal extends FragmentActivity implements OnMapReadyCallback {
+public class ActivityHeroLocal extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private FusedLocationProviderClient fusedLocationProviderClient;
 
+    //setting up lat and long of location i want
+    private static final LatLng DESIRED_LOCATION = new LatLng(34.5086, 112.9353);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_your_local);
+        setContentView(R.layout.activity_hero_local);
 
         //linking the views to variables
-        Button homeButton = (Button) findViewById(R.id.homeButton);
-        Button nextButton = (Button) findViewById(R.id.nextButton);
+        Button backButton = (Button) findViewById(R.id.backButton);
+        Button menuButton = (Button) findViewById(R.id.menuButton);
 
         //onclick listener for the home button
-        homeButton.setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //intent for storing the info of the new activity
-                Intent intent = new Intent(ActivityYourLocal.this, MainActivity.class);
+                Intent intent = new Intent(ActivityHeroLocal.this, ActivityYourLocal.class);
                 //starting the activity in intent
                 startActivity(intent);
             }
         });
 
         //onclick listener for the next button
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        menuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //intent for storing the info of the new activity
-                Intent intent = new Intent(ActivityYourLocal.this, ActivityHeroLocal.class);
+                Intent intent = new Intent(ActivityHeroLocal.this, MainActivity.class);
                 //starting the activity in intent
                 startActivity(intent);
             }
@@ -73,27 +76,15 @@ public class ActivityYourLocal extends FragmentActivity implements OnMapReadyCal
 
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mMap.setMyLocationEnabled(true);
-            getCurrentLocation();
+            addMarker(DESIRED_LOCATION);
         } else {
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }
     }
 
-    private void getCurrentLocation() {
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            //if permissions were not granted by user, request them again
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
-            return;
-        }
-        //if permissions are granted continue and get location
-        fusedLocationProviderClient.getLastLocation().addOnSuccessListener(this, location -> {
-            if (location != null) {
-                LatLng currentLocation = new LatLng(location.getLatitude(), location.getLongitude());
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15f));
-                mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location"));
-            }
-        });
+    private void addMarker(LatLng location) {
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f));
+        mMap.addMarker(new MarkerOptions().position(location).title("The Shaolin Temple"));
     }
 
     @Override
@@ -102,7 +93,6 @@ public class ActivityYourLocal extends FragmentActivity implements OnMapReadyCal
         if (requestCode == 1 && grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
                 mMap.setMyLocationEnabled(true);
-                getCurrentLocation();
             }
         }
     }

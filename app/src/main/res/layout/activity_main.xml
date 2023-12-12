@@ -78,7 +78,7 @@
             android:id="@+id/locatButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="GPS implementation"
+            android:text="Heros in the World"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

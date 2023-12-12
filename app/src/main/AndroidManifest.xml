@@ -17,6 +17,9 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityHeroLocal"
+            android:exported="false" />
+        <activity
             android:name=".ActivityYourLocal"
             android:exported="false" />
 
