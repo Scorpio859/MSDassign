@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //intent for storing the info of the new activity
-                Intent intent = new Intent(MainActivity.this, PerksActivity.class);
+                Intent intent = new Intent(MainActivity.this, ActivityPerks.class);
                 //starting the activity in intent
                 startActivity(intent);
             }

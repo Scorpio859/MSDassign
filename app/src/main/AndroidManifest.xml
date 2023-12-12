@@ -25,7 +25,7 @@
             android:name=".ModesActivity"
             android:exported="false" />
         <activity
-            android:name=".PerksActivity"
+            android:name=".ActivityPerks"
             android:exported="false" />
         <activity
             android:name=".HerosActivity"
